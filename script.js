@@ -1,9 +1,29 @@
 // Assignment code here
-var passLength = prompt('type 8 - 50 !! what is the length');
-var confirmUpper= confirm("Do you want uppercase letters");
-var confirmLower= confirm("Do you want lowercase letters");
-var confirmNumber= confirm("Do you want numbers?");
-var confirmSpecial= confirm("Do you want special characters?");
+
+var validation= true;
+while (validation){
+  var passLength = prompt('type any number 8 - 128 !! what is the length of the password?');
+  if (passLength>=8 && passLength<=50){
+    validation=false;
+  }else{
+    window.alert("Not a valid input. Please enter an number between 8 and 128");
+  }
+}
+
+
+validation=true;
+while(validation){
+  var confirmUpper= confirm("Do you want uppercase letters");
+  var confirmLower= confirm("Do you want lowercase letters");
+  var confirmNumber= confirm("Do you want numbers?");
+  var confirmSpecial= confirm("Do you want special characters?");
+  if(confirmUpper || confirmLower || confirmNumber || confirmSpecial){
+    validation=false;
+  }else{
+    window.alert("You need to confirm at least one character type");
+  }
+}
+
 
 var upperCase=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var lowerCase=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
