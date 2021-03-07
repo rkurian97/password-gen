@@ -1,4 +1,12 @@
 // Assignment code here
+function generatePassword(array, passLength){
+  var pass= "";
+  // Creating a password by selecting a random index in the allChoices array
+  for(i=0; i<passLength; i++){
+    pass=pass+ array[Math.floor(Math.random() * ((array.length-1) - 0) + 0)]
+  }
+  return pass;
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -48,16 +56,7 @@ function writePassword() {
   if(confirmSpecial){
     allChoices=allChoices.concat(special);
   }
-
-  function generatePassword(){
-    var pass= "";
-    // Creating a password by selecting a random index in the allChoices array
-    for(i=0; i<passLength; i++){
-      pass=pass+ allChoices[Math.floor(Math.random() * ((allChoices.length-1) - 0) + 0)]
-    }
-    return pass;
-  }
-  var password = generatePassword();
+  var password = generatePassword(allChoices, passLength);
   var passwordText = document.querySelector("#password");
   
   passwordText.value = password;
